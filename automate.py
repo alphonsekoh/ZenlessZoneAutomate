@@ -1,7 +1,7 @@
 import requests
 import os
 
-API = "https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/home?lang=en-us&act_id=e202406031448091"
+API = "https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/sign"
 # Please check your cookies setting to change this. 
 LTUID = os.environ['LTUID']
 LTOKEN = os.environ['LTOKEN']
@@ -17,7 +17,7 @@ def main():
         response_message = response.json()
         if response_message['retcode'] == 0 and response_message['message'] == 'OK':
             print("Honkai Star Rail Daily Check-in SUCCESS")
-        elif response_message['retcode'] == -5003:
+        elif response_message['retcode'] == -400005:
             print(response_message['message'])
         else:
             print("Please check your LTUID and LTOKEN")

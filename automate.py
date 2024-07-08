@@ -19,8 +19,8 @@ def main():
             print("Honkai Star Rail Daily Check-in SUCCESS")
         elif response_message['retcode'] == -400005:
             print(response_message['message'])
-        else:
-            print("Please check your LTUID and LTOKEN")
+        elif response_message['retcode'] == -100:
+            print("Your cookies has expired. Please update your cookies.")
     except requests.exceptions.RequestException as e:
         print("Request Error occured ", e)
 

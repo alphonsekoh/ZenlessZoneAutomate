@@ -16,7 +16,7 @@ def main():
         response.raise_for_status()
         response_message = response.json()
         if response_message['retcode'] == 0 and response_message['message'] == 'OK':
-            print("Honkai Star Rail Daily Check-in SUCCESS")
+            print("Zenless Zone Zero Daily Check-in SUCCESS")
         elif response_message['retcode'] == -400005:
             print(response_message['message'])
         elif response_message['retcode'] == -100:
